@@ -1,21 +1,19 @@
 import java.util.*;
 
 public class NewsAgency {
-	List<Subscriber> subcribers = new ArrayList<>();
+	private final SubscriberServiceProvider service;
 
-	public void addSubcriber(Subscriber user) {
-		subcribers.add(user);
+	public NewsAgency() {
+		service = new SubscriberServiceProvider();
+
 	}
 
-	public void removeSubcriber(Subscriber user) {
-		subcribers.remove(user);
+	public void breakingNewUpdate() {
+		service.notifyUsers();
 	}
 
-	public String notifyUsers() {
-		StringBuilder news = new StringBuilder();
-		for (Subscriber subscriber : subcribers) {
-			news.append("Hello " + subscriber.getUser() + ", here's the breaking news!!" + "\n");
-		}
-		return news.toString();
+	public SubscriberServiceProvider getService() {
+		return service;
 	}
+
 }

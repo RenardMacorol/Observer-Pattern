@@ -5,13 +5,14 @@ public class App {
 		Subscriber renard = new Subscriber("Renard");
 		Subscriber wonka = new Subscriber("Wonka");
 		Subscriber erika = new Subscriber("Erika");
-		cnn.addSubcriber(renard);
-		cnn.addSubcriber(wonka);
-		cnn.addSubcriber(erika);
 
-		System.out.println(cnn.notifyUsers());
-		cnn.removeSubcriber(wonka);
+		cnn.getService().addSubcriber(renard);
+		cnn.getService().addSubcriber(wonka);
+		cnn.getService().addSubcriber(erika);
+		cnn.getService().notifyUsers();
 
-		System.out.println(cnn.notifyUsers());
+		cnn.getService().removeSubcriber(erika);
+		cnn.getService().addSubcriber(wonka);
+		cnn.getService().notifyUsers();
 	}
 }

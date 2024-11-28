@@ -1,4 +1,4 @@
-public class Subscriber implements SubscriberObserver {
+public class Subscriber {
 	private String user;
 
 	Subscriber(String user) {
@@ -6,7 +6,10 @@ public class Subscriber implements SubscriberObserver {
 	}
 
 	public void notifySubscriber() {
-		System.out.println(user);
+		StringBuilder news = new StringBuilder();
+		news.append("Hello " + user + ", here's the breaking news!!" + "\n");
+		System.out.println(news.toString());
+
 	}
 
 	public String getUser() {
