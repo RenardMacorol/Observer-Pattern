@@ -8,7 +8,7 @@ public class NewsAgency {
 
 	}
 
-	public void breakingNewUpdate() {
+	public void breakingNewsUpdate() {
 		service.notifyUsers();
 	}
 
